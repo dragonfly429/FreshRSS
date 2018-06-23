@@ -18,8 +18,8 @@
 #
 # ***** END LICENSE BLOCK *****
 
-require(__DIR__ . '/../../constants.php');
-require(LIB_PATH . '/lib_rss.php');	//Includes class autoloader
+require(__DIR__ . '/../../constants.php');		//引入常量
+require(LIB_PATH . '/lib_rss.php');				//Includes class autoloader
 
 if (file_exists(DATA_PATH . '/do-install.txt')) {
 	require(APP_PATH . '/install.php');

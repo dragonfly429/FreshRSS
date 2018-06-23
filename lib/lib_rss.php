@@ -1,8 +1,10 @@
 <?php
+//检测php版本要求
 if (version_compare(PHP_VERSION, '5.3.8', '<')) {
 	die('FreshRSS error: FreshRSS requires PHP 5.3.8+!');
 }
 
+//确保有json_decode和encode方法
 if (!function_exists('json_decode')) {
 	require_once(__DIR__ . '/JSON.php');
 	function json_decode($var, $assoc = false) {

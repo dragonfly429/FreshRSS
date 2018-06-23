@@ -5,7 +5,7 @@
 * [Version englis](README.md)
 
 # FreshRSS
-FreshRSS是一个自托管的RSS feed聚合器，就跟[Leed](http://projet.idleman.fr/leed/)和[Kriss Feed](https://tontof.net/kriss/feed/)一样.
+FreshRSS是一个自托管的RSS feed聚合器，类似[Leed](http://projet.idleman.fr/leed/)和[Kriss Feed](https://tontof.net/kriss/feed/).FreshRSS 基于 PHP 框架 Minz。
 
 FreshRSS 轻量、易用、强大且可定制。
 FreshRSS是一个多用户应用，同时支持游客模式。
