@@ -1,70 +1,72 @@
 [![Build Status][travis-badge]][travis-link]
 
-* 在[github.com/FreshRSS/FreshRSS/](https://github.com/FreshRSS/FreshRSS/blob/master/README.md)查看文档以便获取正确的链接和图文。 
+* Read this document on [github.com/FreshRSS/FreshRSS/](https://github.com/FreshRSS/FreshRSS/blob/master/README.md) to get the correct links and pictures.
 * [Version française](README.fr.md)
-* [Version englis](README.md)
 
 # FreshRSS
-FreshRSS是一个自托管的RSS feed聚合器，就跟[Leed](http://projet.idleman.fr/leed/)和[Kriss Feed](https://tontof.net/kriss/feed/)一样.
+FreshRSS is a self-hosted RSS feed aggregator such as [Leed](http://projet.idleman.fr/leed/) or [Kriss Feed](https://tontof.net/kriss/feed/).
 
-FreshRSS 轻量、易用、强大且可定制。
-FreshRSS是一个多用户应用，同时支持游客模式。
-FreshRSS支持通过[PubSubHubbub](https://github.com/pubsubhubbub/PubSubHubbub) 给支持的网站推送即时消息。
-另外还有给移动端app准备的API，以及命令行操作接口[Command-Line Interface](cli/README.md).
-最后, FreshRSS 支持通过 [扩展](#extensions) 来增强或者调整功能.
+It is at the same time lightweight, easy to work with, powerful and customizable.
 
-* 官网: https://freshrss.org
+It is a multi-user application with an anonymous reading mode.
+It supports [PubSubHubbub](https://github.com/pubsubhubbub/PubSubHubbub) for instant notifications from compatible Web sites.
+There is an API for (mobile) clients, and a [Command-Line Interface](cli/README.md).
+Finally, it supports [extensions](#extensions) for further tuning.
+
+* Official website: https://freshrss.org
 * Demo: https://demo.freshrss.org/
 * License: [GNU AGPL 3](https://www.gnu.org/licenses/agpl-3.0.html)
 
 ![FreshRSS logo](docs/img/FreshRSS-logo.png)
 
-# 发行记录
-详见 [发行记录](../../releases).
+# Releases
+See the [list of releases](../../releases).
 
-## 关于分支
-* 如果你希望得到一个稳定版本，那么就用 [master分支](https://github.com/FreshRSS/FreshRSS/tree/master/)
-* 如果你乐意帮忙测试或者开发新功能，那[dev分支](https://github.com/FreshRSS/FreshRSS/tree/dev)就是给你准备的
+## About branches
+* Use [the master branch](https://github.com/FreshRSS/FreshRSS/tree/master/) if you need a stable version.
+* For those willing to help testing or developing the latest features, [the dev branch](https://github.com/FreshRSS/FreshRSS/tree/dev) is waiting for you!
 
-# 声明
-开发此应用是为了满足个人需求，所以不提供任何保证。欢迎大家提功能需求，错误报告，或者其他贡献。推荐方式是[开一个 issue](https://github.com/FreshRSS/FreshRSS/issues)，我们是一个友好的社区。
+# Disclaimer
+This application was developed to fulfil personal needs primarily, and comes with absolutely no warranty.
+Feature requests, bug reports, and other contributions are welcome. The best way is to [open an issue on GitHub](https://github.com/FreshRSS/FreshRSS/issues).
+We are a friendly community.
 
-# 要求
-* 一个运行Linux 或者 Windows的轻量级服务器。
-	* 他甚至能在Raspberry Pi 1 上工作，并且做到响应时间1秒以内。
-* 一个web server: 比如Apache2 (推荐), nginx, lighttpd (其他服务器都没测试过)
-* PHP 5.3.8+ (推荐PHP 5.4+ , 或者 PHP 5.5+ 获得更好性能,  或者PHP 7 获得更更更好的性能)
-	* 必须安装的扩展: [cURL](https://secure.php.net/curl), [DOM](https://secure.php.net/dom), [XML](https://secure.php.net/xml), [session](https://secure.php.net/session), [ctype](https://secure.php.net/ctype), and [PDO_MySQL](https://secure.php.net/pdo-mysql) or [PDO_SQLite](https://secure.php.net/pdo-sqlite) or [PDO_PGSQL](https://secure.php.net/pdo-pgsql)
-	* 推荐安装的扩展: [JSON](https://secure.php.net/json), [GMP](https://secure.php.net/gmp) (for API access on platforms < 64 bits), [IDN](https://secure.php.net/intl.idn) (for Internationalized Domain Names), [mbstring](https://secure.php.net/mbstring) and/or [iconv](https://secure.php.net/iconv) (for charset conversion), [ZIP](https://secure.php.net/zip) (for import/export), [zlib](https://secure.php.net/zlib) (for compressed feeds)
-* MySQL 5.5.3+ (推荐), 或者 SQLite 3.7.4+, 或者 PostgreSQL 9.2+
-* 一个不要太落后的浏览器比如 Firefox / IceCat, Internet Explorer 11 / Edge, Chromium / Chrome, Opera, Safari.
-	* 手机上也能用
+# Requirements
+* Light server running Linux or Windows
+	* It even works on Raspberry Pi 1 with response time under a second (tested with 150 feeds, 22k articles)
+* A web server: Apache2 (recommended), nginx, lighttpd (not tested on others)
+* PHP 5.3.8+ (PHP 5.4+ recommended, and PHP 5.5+ for performance, and PHP 7 for even higher performance)
+	* Required extensions: [cURL](https://secure.php.net/curl), [DOM](https://secure.php.net/dom), [XML](https://secure.php.net/xml), [session](https://secure.php.net/session), [ctype](https://secure.php.net/ctype), and [PDO_MySQL](https://secure.php.net/pdo-mysql) or [PDO_SQLite](https://secure.php.net/pdo-sqlite) or [PDO_PGSQL](https://secure.php.net/pdo-pgsql)
+	* Recommended extensions: [JSON](https://secure.php.net/json), [GMP](https://secure.php.net/gmp) (for API access on platforms < 64 bits), [IDN](https://secure.php.net/intl.idn) (for Internationalized Domain Names), [mbstring](https://secure.php.net/mbstring) and/or [iconv](https://secure.php.net/iconv) (for charset conversion), [ZIP](https://secure.php.net/zip) (for import/export), [zlib](https://secure.php.net/zlib) (for compressed feeds)
+* MySQL 5.5.3+ (recommended), or SQLite 3.7.4+, or PostgreSQL 9.2+
+* A recent browser like Firefox / IceCat, Internet Explorer 11 / Edge, Chromium / Chrome, Opera, Safari.
+	* Works on mobile
 
 ![FreshRSS screenshot](docs/img/FreshRSS-screenshot.png)
 
-# 文档
-* https://freshrss.github.io/FreshRSS/en/（显然 是英文的）
+# Documentation
+* https://freshrss.github.io/FreshRSS/en/
 
-# [安装](https://freshrss.github.io/FreshRSS/en/admins/02_Installation.html)
-1. 通过git获取FreshRSS或者[下载archive](https://github.com/FreshRSS/FreshRSS/archive/master.zip)
-2. 复制到你的服务器(对外只要暴露 `./p/` 文件夹)
-3. 给web server的用户赋予`./data/`文件夹的写权限  
-4. 通过浏览器访问FreshRSS，然后跟随引导完成安装设置
-	* 或者用[命令行](cli/README.md)操作
-5. 然后应该就搞定了 :) 如果你遇到问题了， 请[联系我们](https://github.com/FreshRSS/FreshRSS/issues).
-6. 你可以在 [config.default.php](config.default.php)看到高级设置，然后修改这个文件 `data/config.php`.
-7. 如果你用Apache, 开启 [`AllowEncodedSlashes`](https://httpd.apache.org/docs/trunk/mod/core.html#allowencodedslashes) 以便更好地兼容移动端.
+# [Installation](https://freshrss.github.io/FreshRSS/en/admins/02_Installation.html)
+1. Get FreshRSS with git or [by downloading the archive](https://github.com/FreshRSS/FreshRSS/archive/master.zip)
+2. Dump the application on your server (expose only the `./p/` folder)
+3. Add write access on `./data/` folder to the webserver user
+4. Access FreshRSS with your browser and follow the installation process
+	* or use the [Command-Line Interface](cli/README.md)
+5. Everything should be working :) If you encounter any problem, feel free [contact us](https://github.com/FreshRSS/FreshRSS/issues).
+6. Advanced configuration settings can be seen in [config.default.php](config.default.php) and modified in `data/config.php`.
+7. When using Apache, enable [`AllowEncodedSlashes`](https://httpd.apache.org/docs/trunk/mod/core.html#allowencodedslashes) for better compatibility with mobile clients.
 
-关于安装和服务器配置的更多信息，可以看我们的[文档](https://freshrss.github.io/FreshRSS/en/admins/02_Installation.html).
+More information about installation and server configuration can be found in [our documentation](https://freshrss.github.io/FreshRSS/en/admins/02_Installation.html).
 
-## 自动安装
+## Automated install
 * [Docker](./Docker/)
 * [![Cloudron](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.freshrss.cloudronapp)
 * [![DP deploy](https://raw.githubusercontent.com/DFabric/DPlatform-ShellCore/gh-pages/img/deploy.png)](https://dfabric.github.io/DPlatform-ShellCore)
 * [YunoHost](https://github.com/YunoHost-Apps/freshrss_ynh)
 
-## 在Linux Debian/Ubuntu上的一个完整安装过程示例
-```
+## Example of full installation on Linux Debian/Ubuntu
+```sh
 # If you use an Apache Web server (otherwise you need another Web server)
 sudo apt-get install apache2
 sudo a2enmod headers expires rewrite ssl	#Apache modules
@@ -110,16 +112,16 @@ sudo git pull
 sudo chown -R :www-data . && sudo chmod -R g+r . && sudo chmod -R g+w ./data/
 ```
 
-查看更多git和命令行操作，看[命令行接口文档](cli/README.md).
+See more commands and git commands in the [Command-Line Interface documentation](cli/README.md).
 
-## 权限控制
+## Access control
 It is needed for the multi-user mode to limit access to FreshRSS. You can:
 * use form authentication (needs JavaScript, and PHP 5.5+ recommended)
 * use HTTP authentication supported by your web server
 	* See [Apache documentation](https://httpd.apache.org/docs/trunk/howto/auth.html)
 		* In that case, create a `./p/i/.htaccess` file with a matching `.htpasswd` file.
 
-## 自动更新源
+## Automatic feed update
 * You can add a Cron job to launch the update script.
 Check the Cron documentation related to your distribution ([Debian/Ubuntu](https://help.ubuntu.com/community/CronHowto), [Red Hat/Fedora](https://fedoraproject.org/wiki/Administration_Guide_Draft/Cron), [Slackware](https://docs.slackware.com/fr:slackbook:process_control?#cron), [Gentoo](https://wiki.gentoo.org/wiki/Cron), [Arch Linux](https://wiki.archlinux.org/index.php/Cron)…).
 It is a good idea to use the Web server user.
@@ -129,7 +131,7 @@ For instance, if you want to run the script every hour:
 9 * * * * php /usr/share/FreshRSS/app/actualize_script.php > /tmp/FreshRSS.log 2>&1
 ```
 
-### 在Debian / Ubuntu上操作示例
+### Example on Debian / Ubuntu
 Create `/etc/cron.d/FreshRSS` with:
 
 ```
@@ -137,37 +139,38 @@ Create `/etc/cron.d/FreshRSS` with:
 ```
 
 
-# 高级
-* 出于安全考虑, 应该只对外暴露`./p/` 文件夹.
-	* 尤其要注意`./data/` 文件夹包含重要的配置数据，绝不能对外暴露。
+# Advices
+* For a better security, expose only the `./p/` folder on the Web.
+	* Be aware that the `./data/` folder contains all personal data, so it is a bad idea to expose it.
 * The `./constants.php` file defines access to application folder. If you want to customize your installation, every thing happens here.
-* 如果发生错误，可以在这里查看日志 `./data/users/*/log*.txt` .
+* If you encounter any problem, logs are accessible from the interface or manually in `./data/users/*/log*.txt` files.
 	* The special folder `./data/users/_/` contains the part of the logs that are shared by all users.
 
 
-# 备份
-* 请保存 `./data/config.php`, 和 `./data/users/*/config.php` 文件
-* 您可以通过网页或者[命令行](cli/README.md)导出 OPML 格式的订阅源备份
-* 您可以用 [phpMyAdmin](https://www.phpmyadmin.net) 或者其他数据库工具导出文章:
+# Backup
+* You need to keep `./data/config.php`, and `./data/users/*/config.php` files
+* You can export your feed list in OPML format either from the Web interface, or from the [Command-Line Interface](cli/README.md)
+* To save articles, you can use [phpMyAdmin](https://www.phpmyadmin.net) or MySQL tools:
 
 ```bash
 mysqldump --skip-comments --disable-keys --user=<db_user> --password --host <db_host> --result-file=freshrss.dump.sql --databases <freshrss_db>
 ```
 
 
-# 扩展
-FreshRSS支持在他的核心功能之上，通过扩展，来进一步增强功能.详见[repository dedicated to those extensions](https://github.com/FreshRSS/Extensions).
+# Extensions
+FreshRSS supports further customizations by adding extensions on top of its core functionality.
+See the [repository dedicated to those extensions](https://github.com/FreshRSS/Extensions).
 
 
-# APIs 和 原生app
+# APIs & native apps
 
-FreshRSS 支持通过Linux, Android, iOS, 和 OS X的原生应用来访问，因为它写了两套对接的api.
+FreshRSS supports access from native apps for Linux, Android, iOS, and OS X, via two distinct APIs.
 
 ## Google Reader-like API
 
-关于跟Google Reader适配的api的信息可以看这个文档 [mobile access](https://freshrss.github.io/FreshRSS/en/users/06_Mobile_access.html).
+There is more information available about our Google Reader compatible API on the page [mobile access](https://freshrss.github.io/FreshRSS/en/users/06_Mobile_access.html).
 
-支持的客户端有:
+Supported clients are:
 
 * Android
 	* [News+](https://play.google.com/store/apps/details?id=com.noinnion.android.newsplus) with [News+ Google Reader extension](https://play.google.com/store/apps/details?id=com.noinnion.android.newsplus.extension.google_reader) (Closed source)
@@ -178,9 +181,9 @@ FreshRSS 支持通过Linux, Android, iOS, 和 OS X的原生应用来访问，因
 
 ## Fever API
 
-文档看这个 [Fever API documentation](https://freshrss.github.io/FreshRSS/en/users/06_Fever_API.html) page.
+See our [Fever API documentation](https://freshrss.github.io/FreshRSS/en/users/06_Fever_API.html) page.
 
-支持的客户端有:
+Supported clients are:
 
 * iOS
 	* [Fiery Feeds](https://itunes.apple.com/app/fiery-feeds-rss-reader/id1158763303) (Closed source)
@@ -189,7 +192,7 @@ FreshRSS 支持通过Linux, Android, iOS, 和 OS X的原生应用来访问，因
 	* [Readkit](https://itunes.apple.com/app/readkit/id588726889) (Closed source)
 
 
-# 用到的类库
+# Included libraries
 * [SimplePie](https://simplepie.org/)
 * [MINZ](https://github.com/marienfressinaud/MINZ)
 * [php-http-304](https://alexandre.alapetite.fr/doc-alex/php-http-304/)
@@ -199,11 +202,11 @@ FreshRSS 支持通过Linux, Android, iOS, 和 OS X的原生应用来访问，因
 * [keyboard_shortcuts](http://www.openjs.com/scripts/events/keyboard_shortcuts/)
 * [flotr2](http://www.humblesoftware.com/flotr2)
 
-## 可选的
+## Only for some options
 * [bcrypt.js](https://github.com/dcodeIO/bcrypt.js)
 * [phpQuery](https://github.com/phpquery/phpquery)
 
-## 用来替代原生功能
+## If native functions are not available
 * [Services_JSON](https://pear.php.net/pepr/pepr-proposal-show.php?id=198)
 * [password_compat](https://github.com/ircmaxell/password_compat)
 
